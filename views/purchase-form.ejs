@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>New Purchase</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container page">
+
+    <div class="page-header">
+      <h1>New Purchase</h1>
+      <div class="actions">
+        <a class="btn secondary" href="/">Back</a>
+      </div>
+    </div>
+
+    <div class="card form-card">
+      <form action="/buy" method="POST">
+        <input type="hidden" name="product_id" value="<%= productId %>">
+
+        <div class="form-group">
+          <label>Quantity</label>
+          <input type="number" name="quantity" min="1" required>
+        </div>
+
+        <button class="btn" type="submit">Submit Purchase</button>
+      </form>
+    </div>
+
+  </div>
+</body>
+</html>

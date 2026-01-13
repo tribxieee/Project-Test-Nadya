@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Products</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container page">
+
+    <div class="page-header">
+      <h1>Products</h1>
+      <div class="actions">
+        <a class="btn secondary" href="/purchases">Purchases</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Product List</div>
+      <div class="card-body">
+        <table>
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Stock</th>
+              <th style="text-align:right">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% products.forEach(p => { %>
+            <tr>
+              <td><%= p.name %></td>
+              <td>Rp <%= p.price %></td>
+              <td><%= p.quantity %></td>
+              <td class="action">
+                <a class="btn" href="/buy/<%= p.id %>">Buy</a>
+              </td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
